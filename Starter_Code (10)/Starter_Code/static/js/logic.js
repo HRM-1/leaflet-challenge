@@ -41,13 +41,13 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geoj
 
         legend.onAdd = function (map) {
             const div = L.DomUtil.create('div', 'info legend');
-            const depthValues = [0, 100, 200, 300, 400, 500, 600, 700]; // Adjust based on your data
+            const depthValues = [0, 100, 200, 300, 400, 500, 600, 700]
             div.innerHTML += '<b>Depth Legend</b><br>';
 
             // Circle next to each legend item
             for (let i = 0; i < depthValues.length; i++) {
                 const backgroundColor = getColor(depthValues[i] + 1);
-                const textColor = '#fff'; // Text color is always white for better contrast
+                const textColor = '#fff';
                 div.innerHTML +=
                     '<i style="background:' + backgroundColor + '; color:' + textColor + '"></i> ' +
                     (i === depthValues.length - 1 ? depthValues[i] + '+ km' : depthValues[i] + '&ndash;' + depthValues[i + 1] + ' km') + '<br>';
